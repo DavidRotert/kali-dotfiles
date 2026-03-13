@@ -1,0 +1,54 @@
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]
+then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    #alias dir='dir --color=auto'
+    #alias vdir='vdir --color=auto'
+
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
+extract() {
+    if [ -f $1 ]
+    then
+        case $1 in
+            *.tar.bz2)   tar xjf $1    ;;
+            *.tar.gz)    tar xzf $1    ;;
+            *.bz2)       bunzip2 $1    ;;
+            *.rar)       unrar x $1    ;;
+            *.gz)        gunzip $1     ;;
+            *.tar)       tar xf $1     ;;
+            *.tbz2)      tar xjf $1    ;;
+            *.tgz)       tar xzf $1    ;;
+            *.zip)       unzip $1      ;;
+            *.Z)         uncompress $1 ;;
+            *.7z)        7z x $1       ;;
+            *)           echo "'$1' cannot be extracted via extract()" ;;
+        esac
+    else
+        echo "'$1' is not a valid file"
+    fi
+}
+
+alias tmux-temp-session="tmux new \; set-option destroy-unattached on"
+alias tldr="tldr -L en"
+alias rm="gio trash"
+
+alias unique-value-count="sort | uniq --count"
+alias unique-values="sort --unique"
+alias upper="tr 'a-z' 'A-Z'"
+alias lower="tr 'A-Z' 'a-z'"
+alias case-invert="tr 'a-zA-Z' 'A-Za-z'"
+alias average="awk '{ total += \$1; count++ } END { print total/count }'"
+
+folder_search() {
+    find "$1" -type d 2>/dev/null \
+        | fzf --exact
+}
+
+cdi() {
+    \cd "$(folder_search "/")"
+}

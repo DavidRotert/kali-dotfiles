@@ -1,0 +1,112 @@
+# ~/.bashrc: executed by bash(1) for non-login shells.
+# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
+# for examples
+
+# If not running interactively, don't do anything
+case $- in
+    *i*) ;;
+      *) return;;
+esac
+
+source_if_exists() {
+    if [ -f "$1" ]
+    then
+        source "$1"
+    fi
+}
+
+WORDCHARS='*?[]~=&;!#$%^(){}<>'
+
+# don't put duplicate lines or lines starting with space in the history.
+# See bash(1) for more options
+HISTCONTROL=ignoreboth
+
+# append to the history file, don't overwrite it
+shopt -s histappend
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+HISTFILE="$HOME/.bash_history"
+HISTSIZE=10000
+HISTFILESIZE=10000
+PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+
+# If set, the pattern "**" used in a pathname expansion context will
+# match all files and zero or more directories and subdirectories.
+#shopt -s globstar
+
+# make less more friendly for non-text input files, see lesspipe(1)
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+
+__FG_BLACK="$(tput setaf 0 2>/dev/null)"
+__FG_RED="$(tput setaf 1 2>/dev/null)"
+__FG_GREEN="$(tput setaf 2 2>/dev/null)"
+__FG_YELLOW="$(tput setaf 3 2>/dev/null)"
+__FG_BLUE="$(tput setaf 4 2>/dev/null)"
+__FG_PURPLE="$(tput setaf 5 2>/dev/null)"
+__FG_CYAN="$(tput setaf 6 2>/dev/null)"
+__FG_GREY="$(tput setaf 7 2>/dev/null)"
+__BG_BLACK="$(tput setab 0 2>/dev/null)"
+__BG_RED="$(tput setab 1 2>/dev/null)"
+__BG_GREEN="$(tput setab 2 2>/dev/null)"
+__BG_YELLOW="$(tput setab 3 2>/dev/null)"
+__BG_BLUE="$(tput setab 4 2>/dev/null)"
+__BG_PURPLE="$(tput setab 5 2>/dev/null)"
+__BG_CYAN="$(tput setab 6 2>/dev/null)"
+__BG_GREY="$(tput setab 7 2>/dev/null)"
+__RESET="$(tput sgr0 2>/dev/null)"
+__BOLD="$(tput bold 2>/dev/null)"
+# escape caracters for echoing with colors in functions for PS1 https://stackoverflow.com/questions/6592077/bash-prompt-and-echoing-colors-inside-a-function
+__ESC_START="\001"
+__ESC_END="\002"
+
+color_support=false
+case "$TERM" in
+    *-color|*-256color|xterm-kitty|xterm-ghostty)
+        color_support=true
+        ;;
+esac
+
+# set variable identifying the chroot you work in (used in the prompt below)
+if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
+    debian_chroot=$(cat /etc/debian_chroot)
+fi
+
+if [ "$color_support" = true ] && command -v oh-my-posh &>/dev/null 
+then
+    eval "$(oh-my-posh init bash --config "$HOME/.config/oh-my-posh.yml")"
+else
+    PS1="\n[ ${debian_chroot:+($debian_chroot)}\w ]\n$ "
+fi
+
+# enable programmable completion features (you don't need to enable
+# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+# sources /etc/bash.bashrc).
+if ! shopt -oq posix; then
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    source /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    source /etc/bash_completion
+  fi
+fi
+
+# If this is an xterm set the title to user@host:dir
+case "$TERM" in
+    xterm*|rxvt*)
+        PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+        ;;
+    *)
+        ;;
+esac
+
+eval "$(fzf --bash)"
+
+### Custom bashrc
+source_if_exists "$HOME/.bashrc_custom"
+
+### Setup aliases
+source_if_exists "$HOME/.aliases"
+source_if_exists "$HOME/.aliases_custom"
