@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=obsidian
+Comment=Private and flexible writing app that adapts to the way you think
+Icon=kali-obsidian
+StartupNotify=false
+Terminal=false
+Type=Application
+Categories=kali-reporting-tools
+X-Kali-Package=obsidian
+Exec=obsidian %U
+StartupWMClass=obsidian
+MimeType=x-scheme-handler/obsidian;
+X-XFCE-Source=file:///usr/share/applications/obsidian.desktop

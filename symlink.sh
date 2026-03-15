@@ -1,3 +1,3 @@
 #!/bin/sh
 
-./symlinker.py shells
+./symlinker.py kali-xfce-config shells

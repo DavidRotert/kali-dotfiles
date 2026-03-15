@@ -1,0 +1,14 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Exec=/usr/share/kali-themes/default-browser %u
+Icon=webbrowser
+StartupNotify=true
+Terminal=false
+Categories=Network;WebBrowser;
+OnlyShowIn=KDE;
+Name=Web Browser
+Name[de]=Internetnavigator
+Comment=Browse the web
+Comment[de]=Das Internet durchsuchen
+X-XFCE-Source=file:///usr/share/applications/default-browser.desktop

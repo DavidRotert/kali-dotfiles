@@ -8,7 +8,10 @@ sudo apt install \
     htop \
     tealdeer \
     kali-wallpapers-all \
-    fonts-jetbrains-mono
+    fonts-jetbrains-mono \
+    libreoffice \
+    libreoffice-gtk3 \
+    libreoffice-gtk4
 
 echo "## Install development tools ..."
 sudo apt install \
@@ -22,6 +25,10 @@ echo "## Install reverse engineering tools ..."
 sudo apt install \
     jd-gui \
     ghidra
+
+echo "## Install cracking tools ..."
+sudo apt install \
+    johnny
 
 echo "## Install web tools ..."
 sudo apt install \
