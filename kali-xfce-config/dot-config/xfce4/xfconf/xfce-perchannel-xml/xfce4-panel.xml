@@ -173,7 +173,7 @@
     </property>
     <property name="plugin-15" type="string" value="launcher">
       <property name="items" type="array">
-        <value type="string" value="17735950514.desktop"/>
+        <value type="string" value="17735956265.desktop"/>
       </property>
     </property>
     <property name="plugin-16" type="string" value="pulseaudio">
@@ -189,7 +189,7 @@
     <property name="plugin-2" type="string" value="separator"/>
     <property name="plugin-20" type="string" value="launcher">
       <property name="items" type="array">
-        <value type="string" value="17735950866.desktop"/>
+        <value type="string" value="17735955742.desktop"/>
       </property>
     </property>
     <property name="plugin-22" type="string" value="actions">
@@ -211,12 +211,12 @@
     </property>
     <property name="plugin-5" type="string" value="launcher">
       <property name="items" type="array">
-        <value type="string" value="17735950977.desktop"/>
+        <value type="string" value="17735955893.desktop"/>
       </property>
     </property>
     <property name="plugin-6" type="string" value="launcher">
       <property name="items" type="array">
-        <value type="string" value="17735950183.desktop"/>
+        <value type="string" value="17735956356.desktop"/>
       </property>
     </property>
     <property name="plugin-8" type="string" value="separator">
@@ -228,12 +228,12 @@
     </property>
     <property name="plugin-4" type="string" value="launcher">
       <property name="items" type="array">
-        <value type="string" value="17735950022.desktop"/>
+        <value type="string" value="17735956477.desktop"/>
       </property>
     </property>
     <property name="plugin-7" type="string" value="launcher">
       <property name="items" type="array">
-        <value type="string" value="17735950625.desktop"/>
+        <value type="string" value="17735956094.desktop"/>
       </property>
     </property>
     <property name="clipman" type="empty">
@@ -243,7 +243,7 @@
     </property>
     <property name="plugin-3" type="string" value="launcher">
       <property name="items" type="array">
-        <value type="string" value="17735949861.desktop"/>
+        <value type="string" value="17735955611.desktop"/>
       </property>
     </property>
   </property>
