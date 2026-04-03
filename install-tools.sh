@@ -21,14 +21,20 @@ echo "## Install lists ..."
 sudo apt install \
     seclists
 
+echo "## Install discovery tools ..."
+sudo apt install awscli
+
 echo "## Install reverse engineering tools ..."
 sudo apt install \
     jd-gui \
-    ghidra
+    ghidra \
+    strace
 
-echo "## Install cracking tools ..."
+echo "## Install hacking tools ..."
 sudo apt install \
-    johnny
+    johnny \
+    adaptixc2 \
+    sliver
 
 echo "## Install web tools ..."
 sudo apt install \
