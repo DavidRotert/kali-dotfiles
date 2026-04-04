@@ -72,8 +72,10 @@ def toggle_setting_in_ini(setting, settings_file):
     settings_content = read_file(settings_file)
     value_mach = re.search(fr"^{setting} ?= ?(?P<value>.*)$", settings_content, re.MULTILINE)
     if value_mach:
-        sed(f"s/{setting} = .*/{setting} = {toggle_mode(value_mach.group("value"))}/g", settings_file)
-        sed(f"s/{setting}=.*/{setting}={toggle_mode(value_mach.group("value"))}/g", settings_file)
+        value = value_mach.group("value")
+        toggled_value = toggle_mode(value)
+        sed(f"s|{setting} = .*|{setting} = {toggled_value}|g", settings_file)
+        sed(f"s|{setting}=.*|{setting}={toggled_value}|g", settings_file)
     else:
         print(f"Could not change {setting}")
 
@@ -105,6 +107,14 @@ def toggle_qt_icon_theme():
 
     qt5ct_config = os.path.join(os.path.expanduser("~"), ".config/qt5ct/qt5ct.conf")
     toggle_setting_in_ini("icon_theme", qt5ct_config)
+    
+
+def toggle_qt_color_scheme():
+    qt6ct_config = os.path.join(os.path.expanduser("~"), ".config/qt6ct/qt6ct.conf")
+    toggle_setting_in_ini("color_scheme_path", qt6ct_config)
+
+    qt5ct_config = os.path.join(os.path.expanduser("~"), ".config/qt5ct/qt5ct.conf")
+    toggle_setting_in_ini("color_scheme_path", qt5ct_config)
 
 
 def toggle_xed_theme():
@@ -113,7 +123,18 @@ def toggle_xed_theme():
         "'catppuccin-macchiato'": "'catppuccin-latte'",
         "'catppuccin-latte'": "'catppuccin-macchiato'"
     }
-    set_dconf("/org/x/editor/preferences/editor/scheme", f"{translations[xed_theme]}")
+    set_dconf("/org/x/editor/preferences/editor/scheme", f"{translations[theme]}")
+
+
+def toggle_mousepad_theme():
+    theme = get_dconf("/org/xfce/mousepad/preferences/view/color-scheme")
+    translations = {
+        "'catppuccin-macchiato'": "'catppuccin-latte'",
+        "'catppuccin-latte'": "'catppuccin-macchiato'",
+        "'Kali-Dark'": "'Kali-Light'",
+        "'Kali-Light'": "'Kali-Dark'"
+    }
+    set_dconf("/org/xfce/mousepad/preferences/view/color-scheme", f"{translations[theme]}")
 
 
 def toggle_variety_mode():
@@ -136,5 +157,7 @@ if __name__ == "__main__":
     #toggle_xapps_color_scheme()
     #toggle_kvantum_theme()
     toggle_qt_icon_theme()
+    toggle_qt_color_scheme()
+    toggle_mousepad_theme()
     #toggle_xed_theme()
     #toggle_variety_mode()
