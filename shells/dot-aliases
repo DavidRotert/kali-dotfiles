@@ -44,6 +44,8 @@ alias lower="tr 'A-Z' 'a-z'"
 alias case-invert="tr 'a-zA-Z' 'A-Za-z'"
 alias average="awk '{ total += \$1; count++ } END { print total/count }'"
 
+alias create-report-folders="mkdir -p {artifacts,scan-results,screenshots}"
+
 folder_search() {
     find "$1" -type d 2>/dev/null \
         | fzf --exact

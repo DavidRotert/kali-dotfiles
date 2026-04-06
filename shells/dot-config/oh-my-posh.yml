@@ -29,7 +29,13 @@ blocks:
       - type: git
         style: plain
         foreground: white
-        template: "<{{ if .Root }}lightBlue{{ else }}green{{ end }}>-[</>{{ .HEAD }}<{{ if .Root }}lightBlue{{ else }}green{{ end }}>]</>"
+        template: "<{{ if .Root }}lightBlue{{ else }}green{{ end }}>-[</>{{ .HEAD }}{{ $workingCount := add .Working.Added .Working.Deleted .Working.Modified .Working.Untracked }}{{ if gt $workingCount 0 }} -{{ $workingCount }}{{ end }}{{ $stagingCount := add .Staging.Added .Staging.Deleted .Staging.Modified .Staging.Untracked }}{{ if gt $stagingCount 0 }} +{{ $stagingCount }}{{ end }}{{ $unmergedCount := add .Working.Unmerged .Staging.Unmerged }}{{ if gt $unmergedCount 0 }} x{{ $unmergedCount }}{{ end }}{{ if gt .StashCount 0 }} *{{ .StashCount }}{{ end }}{{ if .BranchStatus }} {{ .BranchStatus }}{{ end }}<{{ if .Root }}lightBlue{{ else }}green{{ end }}>]</>"
+        properties:
+          fetch_status: true
+          fetch_upstream_icon: false
+          branch_icon: ""
+          branch_identical_icon: ""
+          branch_gone_icon: ""
   - type: prompt
     alignment: right
     segments:

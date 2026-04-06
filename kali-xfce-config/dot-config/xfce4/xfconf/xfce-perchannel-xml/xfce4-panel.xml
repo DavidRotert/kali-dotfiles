@@ -30,6 +30,7 @@
         <value type="int" value="9"/>
         <value type="int" value="10"/>
         <value type="int" value="13"/>
+        <value type="int" value="21"/>
         <value type="int" value="12"/>
         <value type="int" value="14"/>
         <value type="int" value="16"/>
@@ -49,16 +50,16 @@
       <property name="menu-height" type="int" value="588"/>
       <property name="menu-width" type="int" value="663"/>
       <property name="recent" type="array">
+        <value type="string" value="code.desktop"/>
+        <value type="string" value="xfce4-screenshooter.desktop"/>
+        <value type="string" value="install4j_kz40pb-SoapUI-5.9.1.desktop"/>
+        <value type="string" value="kali-zaproxy.desktop"/>
+        <value type="string" value="xfce-text-editor.desktop"/>
+        <value type="string" value="kali-jd-gui.desktop"/>
         <value type="string" value="cherrytree.desktop"/>
         <value type="string" value="xfce-keyboard-settings.desktop"/>
         <value type="string" value="root-terminal.desktop"/>
         <value type="string" value="xfce-wmtweaks-settings.desktop"/>
-        <value type="string" value="xfce-wm-settings.desktop"/>
-        <value type="string" value="lstopo.desktop"/>
-        <value type="string" value="kali-hydra.desktop"/>
-        <value type="string" value="qt5ct.desktop"/>
-        <value type="string" value="xfce-ui-settings.desktop"/>
-        <value type="string" value="qterminal.desktop"/>
       </property>
     </property>
     <property name="plugin-10" type="string" value="separator">
@@ -70,6 +71,7 @@
       <property name="middle-click" type="uint" value="1"/>
       <property name="show-handle" type="bool" value="false"/>
       <property name="show-labels" type="bool" value="false"/>
+      <property name="include-all-workspaces" type="bool" value="true"/>
     </property>
     <property name="plugin-12" type="string" value="genmon">
       <property name="command" type="string" value="/usr/share/kali-themes/xfce4-panel-genmon-vpnip.sh"/>
@@ -160,6 +162,7 @@
     </property>
     <property name="plugin-14" type="string" value="systray">
       <property name="known-legacy-items" type="array">
+        <value type="string" value="ethernet-netzverbindung »nat« ist aktiv"/>
         <value type="string" value="ethernet-netzverbindung »wired connection 1« ist aktiv&#xA;vpn-verbindung ist aktiv"/>
         <value type="string" value="zwischenablage"/>
         <value type="string" value="polkit-mate-authentication-agent-1"/>
@@ -244,6 +247,14 @@
     <property name="plugin-3" type="string" value="launcher">
       <property name="items" type="array">
         <value type="string" value="17735955611.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-21" type="string" value="systemload">
+      <property name="cpu" type="empty">
+        <property name="enabled" type="bool" value="false"/>
+      </property>
+      <property name="uptime" type="empty">
+        <property name="enabled" type="bool" value="false"/>
       </property>
     </property>
   </property>

@@ -22,7 +22,8 @@ sudo apt install \
     seclists
 
 echo "## Install discovery tools ..."
-sudo apt install awscli
+sudo apt install awscli \
+    wscat
 
 echo "## Install reverse engineering tools ..."
 sudo apt install \
