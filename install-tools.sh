@@ -42,6 +42,10 @@ sudo apt install \
     zaproxy \
     chromium
 
+echo "## Install forensics tools ..."
+sudo apt install \
+    yara
+
 echo "## Install documentation tools ..."
 sudo apt install \
     obsidian

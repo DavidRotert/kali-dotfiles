@@ -50,16 +50,16 @@
       <property name="menu-height" type="int" value="588"/>
       <property name="menu-width" type="int" value="663"/>
       <property name="recent" type="array">
-        <value type="string" value="code.desktop"/>
+        <value type="string" value="kali-impacket-scripts.desktop"/>
+        <value type="string" value="kali-johnny.desktop"/>
         <value type="string" value="xfce4-screenshooter.desktop"/>
-        <value type="string" value="install4j_kz40pb-SoapUI-5.9.1.desktop"/>
         <value type="string" value="kali-zaproxy.desktop"/>
-        <value type="string" value="xfce-text-editor.desktop"/>
-        <value type="string" value="kali-jd-gui.desktop"/>
-        <value type="string" value="cherrytree.desktop"/>
-        <value type="string" value="xfce-keyboard-settings.desktop"/>
-        <value type="string" value="root-terminal.desktop"/>
-        <value type="string" value="xfce-wmtweaks-settings.desktop"/>
+        <value type="string" value="kali-gophish-stop.desktop"/>
+        <value type="string" value="kali-gophish.desktop"/>
+        <value type="string" value="kali-recon-ng.desktop"/>
+        <value type="string" value="xfreerdp3.desktop"/>
+        <value type="string" value="code.desktop"/>
+        <value type="string" value="install4j_kz40pb-SoapUI-5.9.1.desktop"/>
       </property>
     </property>
     <property name="plugin-10" type="string" value="separator">
