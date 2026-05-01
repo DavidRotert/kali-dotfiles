@@ -1,6 +1,6 @@
 #!/bin/sh
 
-script_dir="$(dirname $0)"
+script_dir="$(dirname "$0")"
 
 echo "## Install helper tools ..."
 sudo apt install \
@@ -11,7 +11,9 @@ sudo apt install \
     fonts-jetbrains-mono \
     libreoffice \
     libreoffice-gtk3 \
-    libreoffice-gtk4
+    libreoffice-gtk4 \
+    remmina \
+    shellcheck
 
 echo "## Install development tools ..."
 sudo apt install \
@@ -22,7 +24,8 @@ sudo apt install \
     seclists
 
 echo "## Install discovery tools ..."
-sudo apt install awscli \
+sudo apt install \
+    awscli \
     wscat
 
 echo "## Install reverse engineering tools ..."
