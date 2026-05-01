@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Switch theme mode
+Comment=
+Icon=preferences-desktop-theme
+Path=
+Terminal=false
+StartupNotify=false
+Exec=/usr/local/bin/switch-light-and-dark-mode.py
