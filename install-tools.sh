@@ -38,7 +38,8 @@ echo "## Install hacking tools ..."
 sudo apt install \
     johnny \
     adaptixc2 \
-    sliver
+    sliver \
+    bloodhound
 
 echo "## Install web tools ..."
 sudo apt install \
