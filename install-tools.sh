@@ -13,7 +13,9 @@ sudo apt install \
     libreoffice-gtk3 \
     libreoffice-gtk4 \
     remmina \
-    shellcheck
+    shellcheck \
+    krb5-user \
+    libsasl2-modules-gssapi-mit
 
 echo "## Install development tools ..."
 sudo apt install \
