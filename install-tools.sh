@@ -15,7 +15,8 @@ sudo apt install \
     remmina \
     shellcheck \
     krb5-user \
-    libsasl2-modules-gssapi-mit
+    libsasl2-modules-gssapi-mit \
+    jq
 
 echo "## Install development tools ..."
 sudo apt install \
