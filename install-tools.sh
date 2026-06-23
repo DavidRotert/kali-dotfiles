@@ -24,7 +24,8 @@ sudo apt install \
 
 echo "## Install lists ..."
 sudo apt install \
-    seclists
+    seclists \
+    payloadsallthethings
 
 echo "## Install discovery tools ..."
 sudo apt install \
@@ -42,7 +43,8 @@ sudo apt install \
     johnny \
     adaptixc2 \
     sliver \
-    bloodhound
+    bloodhound \
+    nishang
 
 echo "## Install web tools ..."
 sudo apt install \
