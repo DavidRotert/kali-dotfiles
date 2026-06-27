@@ -9,6 +9,7 @@ sudo apt install \
     tealdeer \
     kali-wallpapers-all \
     fonts-jetbrains-mono \
+    baobab \
     libreoffice \
     libreoffice-gtk3 \
     libreoffice-gtk4 \
@@ -16,11 +17,10 @@ sudo apt install \
     shellcheck \
     krb5-user \
     libsasl2-modules-gssapi-mit \
-    jq
-
-echo "## Install development tools ..."
-sudo apt install \
-    dbeaver
+    jq \
+    dbeaver \
+    oracle-instantclient-sqlplus \
+    snmp-mibs-downloader
 
 echo "## Install lists ..."
 sudo apt install \

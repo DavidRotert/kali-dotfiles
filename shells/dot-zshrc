@@ -96,3 +96,4 @@ source_if_exists "$HOME/.zshrc_custom"
 ### Setup aliases
 source_if_exists "$HOME/.aliases"
 source_if_exists "$HOME/.aliases_custom"
+: undercover && source ~/.config/zshrc-undercover

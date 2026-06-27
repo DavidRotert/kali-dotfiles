@@ -110,3 +110,4 @@ source_if_exists "$HOME/.bashrc_custom"
 ### Setup aliases
 source_if_exists "$HOME/.aliases"
 source_if_exists "$HOME/.aliases_custom"
+: undercover && source ~/.config/bashrc-undercover
