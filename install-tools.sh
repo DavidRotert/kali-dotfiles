@@ -30,7 +30,7 @@ sudo apt install \
 echo "## Install discovery tools ..."
 sudo apt install \
     awscli \
-    wscat
+    node-ws
 
 echo "## Install reverse engineering tools ..."
 sudo apt install \
