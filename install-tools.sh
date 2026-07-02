@@ -44,7 +44,8 @@ sudo apt install \
     adaptixc2 \
     sliver \
     bloodhound \
-    nishang
+    nishang \
+    penelope
 
 echo "## Install web tools ..."
 sudo apt install \
