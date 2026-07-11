@@ -45,7 +45,8 @@ sudo apt install \
     sliver \
     bloodhound \
     nishang \
-    penelope
+    penelope \
+    coercer
 
 echo "## Install web tools ..."
 sudo apt install \
