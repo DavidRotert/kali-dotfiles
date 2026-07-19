@@ -41,12 +41,15 @@ sudo apt install \
 echo "## Install hacking tools ..."
 sudo apt install \
     johnny \
+    ligolo-ng \
+    ligolo-ng-common-binaries \
     adaptixc2 \
     sliver \
     bloodhound \
     nishang \
     penelope \
-    coercer
+    coercer \
+    bloodyad
 
 echo "## Install web tools ..."
 sudo apt install \
