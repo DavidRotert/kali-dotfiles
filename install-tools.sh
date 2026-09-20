@@ -30,7 +30,8 @@ sudo apt install \
 echo "## Install discovery tools ..."
 sudo apt install \
     awscli \
-    node-ws
+    node-ws \
+    pspy
 
 echo "## Install reverse engineering tools ..."
 sudo apt install \
@@ -49,7 +50,9 @@ sudo apt install \
     nishang \
     penelope \
     coercer \
-    bloodyad
+    bloodyad \
+    rubeus \
+    goshs
 
 echo "## Install web tools ..."
 sudo apt install \
